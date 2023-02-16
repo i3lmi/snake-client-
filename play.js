@@ -53,3 +53,20 @@ const connect = function () {
     return conn;
   };
   
+  function connect() {
+    const conn = net.createConnection({
+      host: 'localhost',
+      port: 3000
+    });
+  
+    // register connect handler
+    conn.on('connect', () => {
+      console.log("Successfully connected to game server");
+      conn.write("Name: ABC"); // Replace ABC with your own initials
+    });
+  
+    conn.setEncoding('utf8');
+  
+    // ...
+  }
+  
